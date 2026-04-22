@@ -7,6 +7,7 @@ import com.urjc.sendaurjc.domain.repository.CompanionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.util.UUID
+import java.util.concurrent.CopyOnWriteArrayList
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -57,4 +58,16 @@ class CompanionRepositoryImpl @Inject constructor(
 
     override suspend fun getRequest(id: String): CompanionRequest? =
         dao.getById(id)?.toDomain()
+
+    // In-memory store for ratings (production would use a DAO/table)
+    private val ratings = CopyOnWriteArrayList<UserRating>()
+
+    override suspend fun saveUserRating(rating: UserRating): Result<Unit> = runCatching {
+        ratings.add(rating)
+    }
+
+    override suspend fun getAverageRating(userId: String, asVolunteer: Boolean): Double {
+        val relevant = ratings.filter { it.toUserId == userId && it.asVolunteer == asVolunteer }
+        return if (relevant.isEmpty()) 0.0 else relevant.map { it.score }.average()
+    }
 }

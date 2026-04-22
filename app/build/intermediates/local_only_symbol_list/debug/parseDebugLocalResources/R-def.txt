@@ -20,6 +20,8 @@ color urjc_light_blue
 color urjc_orange
 color urjc_red
 color urjc_white
+drawable ic_launcher
+drawable ic_launcher_round
 id action_home_to_admin
 id action_home_to_incidents
 id action_home_to_profile

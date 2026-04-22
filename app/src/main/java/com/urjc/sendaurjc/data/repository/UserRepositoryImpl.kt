@@ -131,4 +131,15 @@ class UserRepositoryImpl @Inject constructor(
         dataStore.edit { prefs -> prefs[TOKEN_KEY] = body.accessToken }
         body.accessToken
     }
+
+    // In-memory store for calibration preferences (production would use a DAO/table)
+    private val calibrationStore = mutableMapOf<String, com.urjc.sendaurjc.domain.model.CalibrationPreferences>()
+
+    override suspend fun getCalibrationPreferences(userId: String): com.urjc.sendaurjc.domain.model.CalibrationPreferences {
+        return calibrationStore[userId] ?: com.urjc.sendaurjc.domain.model.CalibrationPreferences(userId)
+    }
+
+    override suspend fun saveCalibrationPreferences(preferences: com.urjc.sendaurjc.domain.model.CalibrationPreferences): Result<Unit> = runCatching {
+        calibrationStore[preferences.userId] = preferences
+    }
 }

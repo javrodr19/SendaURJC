@@ -17,7 +17,7 @@ class LoginUseCase @Inject constructor(
         }
 
         // RF27: Acceso mediante autenticación centralizada
-        val result = userRepository.loginWithSso(email, ssoToken)
+        val result = userRepository.loginWithSSO(ssoToken)
         
         // RF28: Perfil único
         // Validation occurs inside repository / backend, but if successful, user is returned

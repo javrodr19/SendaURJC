@@ -64,7 +64,7 @@ class IncidentFragment : Fragment() {
             // Use a default campus location; in production use live GPS
             val location = GeoPoint(40.3289, -3.8737)
             viewModel.reportIncident(type, description, location)
-            binding.etDescription.text.clear()
+            binding.etDescription.text?.clear()
         }
     }
 

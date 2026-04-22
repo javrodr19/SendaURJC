@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-59:/values-en/values-en.xml",
+            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-60:/values-en/values-en.xml",
             "map": [
                 {
                     "source": "/home/javier/Desktop/SendaURJC/app/src/main/res/values-en/strings.xml",

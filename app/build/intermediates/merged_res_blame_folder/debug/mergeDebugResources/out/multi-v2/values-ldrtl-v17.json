@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-59:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-60:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/80068e7d49bda64f020a74ea14017658/transformed/material-1.12.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/e18fd8301392d626ea3315a92d1fe50e/transformed/material-1.12.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

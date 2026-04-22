@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-59:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-60:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/5f888046a6f90a5b10c6e9e5ed34e779/transformed/navigation-ui-2.7.7/res/values-b+sr+Latn/values-b+sr+Latn.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,162",
-                        "endColumns": "106,122",
-                        "endOffsets": "157,280"
-                    },
-                    "to": {
-                        "startLines": "112,113",
-                        "startColumns": "4,4",
-                        "startOffsets": "9560,9667",
-                        "endColumns": "106,122",
-                        "endOffsets": "9662,9785"
-                    }
-                },
-                {
-                    "source": "/home/javier/.gradle/caches/transforms-4/3df25e7c963b4215e6c6173199fbf296/transformed/appcompat-1.7.0/res/values-b+sr+Latn/values-b+sr+Latn.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/af712cf885949bccffc480109fa579b6/transformed/appcompat-1.7.0/res/values-b+sr+Latn/values-b+sr+Latn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/80068e7d49bda64f020a74ea14017658/transformed/material-1.12.0/res/values-b+sr+Latn/values-b+sr+Latn.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/9368424fc5d039f4695aaa2948fadcd7/transformed/navigation-ui-2.7.7/res/values-b+sr+Latn/values-b+sr+Latn.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,162",
+                        "endColumns": "106,122",
+                        "endOffsets": "157,280"
+                    },
+                    "to": {
+                        "startLines": "112,113",
+                        "startColumns": "4,4",
+                        "startOffsets": "9560,9667",
+                        "endColumns": "106,122",
+                        "endOffsets": "9662,9785"
+                    }
+                },
+                {
+                    "source": "/home/javier/.gradle/caches/transforms-4/e18fd8301392d626ea3315a92d1fe50e/transformed/material-1.12.0/res/values-b+sr+Latn/values-b+sr+Latn.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/88b741189be59f85ea5b7b5c0ad0149b/transformed/core-1.13.1/res/values-b+sr+Latn/values-b+sr+Latn.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/20e69af9ffa9b0aaf99943b046fe6b86/transformed/core-1.13.1/res/values-b+sr+Latn/values-b+sr+Latn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-59:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-60:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/80068e7d49bda64f020a74ea14017658/transformed/material-1.12.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/e18fd8301392d626ea3315a92d1fe50e/transformed/material-1.12.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

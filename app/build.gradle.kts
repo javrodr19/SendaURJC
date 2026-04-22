@@ -79,7 +79,9 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
+    implementation(libs.hilt.work)
     kapt(libs.hilt.compiler)
+    kapt(libs.hilt.work.compiler)
 
     // Retrofit & OkHttp
     implementation(libs.retrofit)

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-59:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-60:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/3df25e7c963b4215e6c6173199fbf296/transformed/appcompat-1.7.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/af712cf885949bccffc480109fa579b6/transformed/appcompat-1.7.0/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/80068e7d49bda64f020a74ea14017658/transformed/material-1.12.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/e18fd8301392d626ea3315a92d1fe50e/transformed/material-1.12.0/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

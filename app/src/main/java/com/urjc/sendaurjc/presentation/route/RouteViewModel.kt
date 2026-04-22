@@ -13,6 +13,21 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+sealed class RouteUiState {
+    object Idle : RouteUiState()
+    object Loading : RouteUiState()
+    data class RoutesCalculated(val routes: List<Route>) : RouteUiState()
+    data class RoutesReady(val routes: List<Route>) : RouteUiState()
+    data class Navigating(
+        val route: Route,
+        val instructions: List<NavigationInstruction> = emptyList(),
+        val currentStep: Int = 0
+    ) : RouteUiState()
+    object Arrived : RouteUiState()
+    object Completed : RouteUiState()
+    data class Error(val message: String) : RouteUiState()
+}
+
 @HiltViewModel
 class RouteViewModel @Inject constructor(
     private val calculateRoutesUseCase: CalculateRoutesUseCase,
@@ -20,33 +35,92 @@ class RouteViewModel @Inject constructor(
     private val routeRepository: RouteRepository
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow<RouteUiState>(RouteUiState.Idle)
-    val uiState: StateFlow<RouteUiState> = _uiState.asStateFlow()
+    private val _state = MutableStateFlow<RouteUiState>(RouteUiState.Idle)
+    val state: StateFlow<RouteUiState> = _state.asStateFlow()
+
+    // Backward compatible alias
+    private val _uiState get() = _state
+    val uiState: StateFlow<RouteUiState> get() = state
 
     private val _availableRoutes = MutableStateFlow<List<Route>>(emptyList())
     val availableRoutes: StateFlow<List<Route>> = _availableRoutes.asStateFlow()
 
     val safetyState: StateFlow<SafetyState> = safetyMonitorUseCase.safetyState
 
-    fun findRoutes(origin: GeoPoint, destination: GeoPoint) {
-        _uiState.value = RouteUiState.Loading
+    fun calculateRoutes(origin: GeoPoint, destination: GeoPoint) {
+        _state.value = RouteUiState.Loading
         viewModelScope.launch {
             calculateRoutesUseCase(origin, destination)
                 .onSuccess { routes ->
                     _availableRoutes.value = routes
-                    _uiState.value = RouteUiState.RoutesCalculated(routes)
+                    _state.value = RouteUiState.RoutesReady(routes)
                 }
                 .onFailure { error ->
-                    _uiState.value = RouteUiState.Error(error.message ?: "Error al calcular rutas")
+                    _state.value = RouteUiState.Error(error.message ?: "Error al calcular rutas")
                 }
         }
     }
 
-    fun startNavigation(route: Route) {
-        _uiState.value = RouteUiState.Navigating(route)
+    fun findRoutes(origin: GeoPoint, destination: GeoPoint) {
+        _state.value = RouteUiState.Loading
+        viewModelScope.launch {
+            calculateRoutesUseCase(origin, destination)
+                .onSuccess { routes ->
+                    _availableRoutes.value = routes
+                    _state.value = RouteUiState.RoutesCalculated(routes)
+                }
+                .onFailure { error ->
+                    _state.value = RouteUiState.Error(error.message ?: "Error al calcular rutas")
+                }
+        }
+    }
+
+    fun selectRoute(route: Route) {
+        val instructions = routeRepository.getNavigationInstructions(route)
+        _state.value = RouteUiState.Navigating(route, instructions, 0)
         viewModelScope.launch {
             routeRepository.setActiveRoute(route)
             safetyMonitorUseCase.startMonitoring(route, route.origin, viewModelScope)
+        }
+    }
+
+    fun startNavigation(route: Route) {
+        selectRoute(route)
+    }
+
+    fun advanceStep() {
+        val current = _state.value
+        if (current is RouteUiState.Navigating) {
+            val nextStep = current.currentStep + 1
+            if (nextStep >= current.instructions.size) {
+                _state.value = RouteUiState.Arrived
+            } else {
+                _state.value = current.copy(currentStep = nextStep)
+            }
+        }
+    }
+
+    fun cancelNavigation() {
+        viewModelScope.launch {
+            routeRepository.clearActiveRoute()
+            safetyMonitorUseCase.stopMonitoring()
+            _state.value = RouteUiState.Idle
+        }
+    }
+
+    fun recalculateActiveRoute() {
+        val current = _state.value
+        if (current is RouteUiState.Navigating) {
+            viewModelScope.launch {
+                routeRepository.recalculateRoute(current.route)
+                    .onSuccess { updatedRoute ->
+                        val instructions = routeRepository.getNavigationInstructions(updatedRoute)
+                        _state.value = RouteUiState.Navigating(updatedRoute, instructions, current.currentStep)
+                    }
+                    .onFailure { error ->
+                        _state.value = RouteUiState.Error(error.message ?: "Error al recalcular ruta")
+                    }
+            }
         }
     }
 
@@ -60,15 +134,6 @@ class RouteViewModel @Inject constructor(
 
     fun finishRoute() {
         safetyMonitorUseCase.stopMonitoring()
-        _uiState.value = RouteUiState.Completed
-    }
-
-    sealed class RouteUiState {
-        object Idle : RouteUiState()
-        object Loading : RouteUiState()
-        data class RoutesCalculated(val routes: List<Route>) : RouteUiState()
-        data class Navigating(val route: Route) : RouteUiState()
-        object Completed : RouteUiState()
-        data class Error(val message: String) : RouteUiState()
+        _state.value = RouteUiState.Completed
     }
 }

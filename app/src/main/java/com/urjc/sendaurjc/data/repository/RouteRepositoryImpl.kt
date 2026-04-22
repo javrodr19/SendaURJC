@@ -70,7 +70,7 @@ class RouteRepositoryImpl @Inject constructor(
             val bearing = computeBearing(segment.start, segment.end)
             val direction = bearingToDirection(bearing)
             NavigationInstruction(
-                text = "En ${haversineDistance(segment.start, segment.end).roundToInt()}m, $direction",
+                text = "En ${haversineDistance(segment.start, segment.end).toInt()}m, $direction",
                 distanceMeters = haversineDistance(segment.start, segment.end),
                 point = segment.end
             )
@@ -95,6 +95,17 @@ class RouteRepositoryImpl @Inject constructor(
 
     override suspend fun changeRoute(newRoute: Route): Result<Unit> = runCatching {
         _activeRoute.value = newRoute
+    }
+
+    // In-memory store for route history (production would use a DAO/table)
+    private val routeHistoryStore = mutableListOf<RouteHistory>()
+
+    override suspend fun saveRouteHistory(history: RouteHistory): Result<Unit> = runCatching {
+        routeHistoryStore.add(history)
+    }
+
+    override suspend fun getRouteHistory(userId: String): List<RouteHistory> {
+        return routeHistoryStore.filter { it.userId == userId }
     }
 
     private fun generateCandidateRoutes(
@@ -139,7 +150,7 @@ class RouteRepositoryImpl @Inject constructor(
             destination = destination,
             segments = segments,
             securityIndex = calculateSecurityIndexUseCase(segments, prefs),
-            estimatedMinutes = (distanceM / 80.0).roundToInt()  // ~80m/min walking
+            estimatedMinutes = (distanceM / 80.0).toInt()  // ~80m/min walking
         )
     }
 
@@ -172,5 +183,3 @@ class RouteRepositoryImpl @Inject constructor(
         else -> "gire al noroeste"
     }
 }
-
-private fun Double.roundToInt(): Int = kotlin.math.roundToInt(this)

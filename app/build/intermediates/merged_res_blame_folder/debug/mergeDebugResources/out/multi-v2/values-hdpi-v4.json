@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-59:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.urjc.sendaurjc.app-mergeDebugResources-60:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/javier/.gradle/caches/transforms-4/3df25e7c963b4215e6c6173199fbf296/transformed/appcompat-1.7.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/home/javier/.gradle/caches/transforms-4/af712cf885949bccffc480109fa579b6/transformed/appcompat-1.7.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
