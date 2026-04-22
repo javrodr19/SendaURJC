@@ -1,0 +1,6 @@
+-keep class com.urjc.sendaurjc.data.remote.dto.** { *; }
+-keep class com.urjc.sendaurjc.domain.model.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**

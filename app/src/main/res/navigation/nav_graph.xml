@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.urjc.sendaurjc.presentation.auth.LoginFragment"
+        android:label="@string/login_title">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.urjc.sendaurjc.presentation.home.HomeFragment"
+        android:label="@string/home">
+        <action
+            android:id="@+id/action_home_to_routeSelection"
+            app:destination="@id/routeSelectionFragment" />
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_home_to_volunteer"
+            app:destination="@id/volunteerFragment" />
+        <action
+            android:id="@+id/action_home_to_incidents"
+            app:destination="@id/incidentFragment" />
+        <action
+            android:id="@+id/action_home_to_admin"
+            app:destination="@id/adminFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/routeSelectionFragment"
+        android:name="com.urjc.sendaurjc.presentation.route.RouteSelectionFragment"
+        android:label="@string/choose_route">
+        <argument
+            android:name="origin"
+            app:argType="com.urjc.sendaurjc.domain.model.GeoPoint"
+            app:nullable="true" />
+        <argument
+            android:name="destination"
+            app:argType="com.urjc.sendaurjc.domain.model.GeoPoint"
+            app:nullable="true" />
+        <argument
+            android:name="companionRequested"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_routeSelection_to_navigation"
+            app:destination="@id/navigationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.urjc.sendaurjc.presentation.route.NavigationFragment"
+        android:label="@string/navigating">
+        <argument
+            android:name="route"
+            app:argType="com.urjc.sendaurjc.domain.model.Route"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/volunteerFragment"
+        android:name="com.urjc.sendaurjc.presentation.volunteer.VolunteerFragment"
+        android:label="@string/volunteers" />
+
+    <fragment
+        android:id="@+id/incidentFragment"
+        android:name="com.urjc.sendaurjc.presentation.incidents.IncidentFragment"
+        android:label="@string/incidents" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.urjc.sendaurjc.presentation.profile.ProfileFragment"
+        android:label="@string/my_profile">
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.urjc.sendaurjc.presentation.admin.AdminFragment"
+        android:label="@string/admin_panel" />
+
+</navigation>

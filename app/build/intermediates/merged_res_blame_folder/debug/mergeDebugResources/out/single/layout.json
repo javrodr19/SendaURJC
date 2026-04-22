@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_profile.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_navigation.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_navigation.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_incident.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_incident.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_volunteer.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_volunteer.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/item_incident.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/item_incident.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_route_selection.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_route_selection.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_home.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_admin.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_admin.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/item_companion_request.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/item_companion_request.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/item_route.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/item_route.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/activity_main.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/fragment_login.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.urjc.sendaurjc.app-mergeDebugResources-60:/layout/item_admin_incident.xml",
+        "source": "com.urjc.sendaurjc.app-main-63:/layout/item_admin_incident.xml"
+    }
+]

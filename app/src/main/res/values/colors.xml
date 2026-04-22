@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- URJC corporate identity colors -->
+<resources>
+    <color name="urjc_blue">#003DA5</color>
+    <color name="urjc_red">#C8102E</color>
+    <color name="urjc_white">#FFFFFF</color>
+    <color name="urjc_gray">#6B7280</color>
+    <color name="urjc_orange">#F97316</color>
+    <color name="urjc_light_blue">#E8F0FE</color>
+
+    <!-- Route safety colors -->
+    <color name="route_safe">#4CAF50</color>
+    <color name="route_medium">#FF9800</color>
+    <color name="route_unsafe">#F44336</color>
+
+    <!-- System -->
+    <color name="colorPrimary">@color/urjc_blue</color>
+    <color name="colorPrimaryVariant">#002580</color>
+    <color name="colorOnPrimary">@color/urjc_white</color>
+    <color name="colorSecondary">@color/urjc_red</color>
+    <color name="colorOnSecondary">@color/urjc_white</color>
+    <color name="colorSurface">@color/urjc_white</color>
+    <color name="colorOnSurface">#1F2937</color>
+    <color name="colorBackground">@color/urjc_white</color>
+    <color name="colorOnBackground">#1F2937</color>
+    <color name="colorError">@color/urjc_red</color>
+</resources>

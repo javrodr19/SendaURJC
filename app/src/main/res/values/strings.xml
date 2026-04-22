@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Default language: Spanish -->
+<resources>
+    <string name="app_name">Senda URJC</string>
+
+    <!-- Login -->
+    <string name="login_title">Inicio de sesión</string>
+    <string name="login_subtitle">Accede con tu correo institucional</string>
+    <string name="email_hint">Correo institucional (@urjc.es)</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="sso_button">Acceder con SSO URJC</string>
+    <string name="sso_redirect_info">Redirigiendo al portal SSO de la URJC. Usa tu usuario institucional.</string>
+
+    <!-- Home -->
+    <string name="home">Inicio</string>
+    <string name="welcome_user">Bienvenido/a, %1$s</string>
+    <string name="set_origin">Fijar origen</string>
+    <string name="set_destination">Fijar destino</string>
+    <string name="schedule_departure">Programar salida</string>
+    <string name="request_companion">Solicitar acompañante</string>
+    <string name="start_route">Iniciar ruta</string>
+    <string name="origin">Origen</string>
+    <string name="destination">Destino</string>
+
+    <!-- Route -->
+    <string name="choose_route">Elige tu ruta</string>
+    <string name="select">Seleccionar</string>
+    <string name="navigating">Navegando</string>
+    <string name="calculating">Calculando ruta…</string>
+    <string name="destination_reached">¡Has llegado a tu destino!</string>
+    <string name="security_index">Seguridad: %1$d%%</string>
+    <string name="cancel">Cancelar</string>
+    <string name="report">Reportar</string>
+    <string name="recalculate">Recalcular</string>
+    <string name="next">Siguiente</string>
+
+    <!-- Arrival dialog -->
+    <string name="arrived_title">Llegada</string>
+    <string name="arrived_question">¿Has llegado bien a tu destino?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+
+    <!-- Volunteers -->
+    <string name="volunteers">Voluntarios</string>
+    <string name="no_requests">No hay solicitudes de acompañamiento pendientes</string>
+    <string name="accept">Aceptar</string>
+    <string name="reject">Rechazar</string>
+
+    <!-- Incidents -->
+    <string name="incidents">Incidencias</string>
+    <string name="report_incident">Reportar incidencia</string>
+    <string name="description">Descripción</string>
+
+    <!-- Incident types (must match IncidentType enum order) -->
+    <string-array name="incident_types">
+        <item>Problema de iluminación</item>
+        <item>Alta afluencia de personas</item>
+        <item>Obstáculo en la vía</item>
+        <item>Otro</item>
+    </string-array>
+
+    <!-- Profile -->
+    <string name="my_profile">Mi perfil</string>
+    <string name="profile">Perfil</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="name">Nombre</string>
+    <string name="surname">Apellidos</string>
+    <string name="be_volunteer">Ofrecerme como voluntario/a</string>
+    <string name="save">Guardar</string>
+    <string name="profile_stats">Rutas: %1$d | Acompañamientos: %2$d</string>
+    <string name="trusted_contact">Contacto de confianza</string>
+    <string name="contact_name">Nombre del contacto</string>
+    <string name="contact_phone">Teléfono</string>
+    <string name="contact_email">Correo del contacto</string>
+    <string name="save_contact">Guardar contacto de confianza</string>
+    <string name="logout">Cerrar sesión</string>
+
+    <!-- Admin -->
+    <string name="admin_panel">Panel de administración</string>
+    <string name="change_status">Cambiar estado</string>
+</resources>

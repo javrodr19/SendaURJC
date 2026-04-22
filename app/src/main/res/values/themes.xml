@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SendaURJC" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/urjc_blue</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/urjc_white</item>
+        <item name="colorSecondary">@color/urjc_red</item>
+        <item name="colorOnSecondary">@color/urjc_white</item>
+        <item name="colorSurface">@color/urjc_white</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorError">@color/urjc_red</item>
+        <item name="android:statusBarColor">@color/urjc_blue</item>
+        <item name="android:windowBackground">@color/urjc_white</item>
+    </style>
+
+    <style name="Theme.SendaURJC.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
